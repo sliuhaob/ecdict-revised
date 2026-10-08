@@ -1,0 +1,85 @@
+{
+  "datasetVersion": "0.1.0",
+  "preparedOn": "2026-10-08",
+  "runtime": {
+    "node": "v26.2.0"
+  },
+  "database": {
+    "sha256": "d1472880962d742b832f302cc0a4b50782ac2210f36f595a22ef749d5da11b4e",
+    "tables": {
+      "entries": {
+        "rows": 758497,
+        "logicalSha256": "1e192e80a8e3e2e92694e6f463d49b0d62b99d96ab742936fafd794684cb30f0"
+      },
+      "aliases": {
+        "rows": 56434,
+        "logicalSha256": "c4c5ce2d5ee949de29d4244bf7d57aa5ea1ae1553f8c50c4ae8ffd54be8a34f6"
+      }
+    },
+    "integrity": [
+      "ok"
+    ],
+    "blankTranslations": 0,
+    "blankKeys": 0,
+    "orphanAliases": 0,
+    "valid": true
+  },
+  "csvRoundTrip": {
+    "passed": true,
+    "entriesCompared": 758497,
+    "aliasesCompared": 56434,
+    "logicalContentEqual": true,
+    "databaseFileByteIdentityRequired": false
+  },
+  "scriptTests": {
+    "passed": true,
+    "cases": [
+      "CSV quoting, comma, CR/LF, Unicode, literal separators, long fields",
+      "Refuse overwrite",
+      "Reject malformed CSV and duplicate NOCASE keys",
+      "Reject blank translations, orphan aliases and unsafe checksum paths",
+      "Pinned-CSV comparison: distinguish content edits, formatting-only changes, additions and absences"
+    ]
+  },
+  "originalInputsUnchanged": true,
+  "privatePathScan": {
+    "passed": true,
+    "scope": "All public files including decompressed gzip records; explicit Windows user-path and credential-pattern checks"
+  },
+  "differences": {
+    "sourceEntries": 770611,
+    "currentEntries": 758497,
+    "commonEntries": 745030,
+    "added": 13467,
+    "absentFromCurrent": 25581,
+    "contentRevised": 68593,
+    "translationRevised": 68593,
+    "phoneticRevised": 0,
+    "formattingOnly": 124595,
+    "byteIdenticalCommonEntries": 551842,
+    "netEntries": -12114
+  },
+  "semanticAccuracyCertified": false,
+  "allSensesCompleteCertified": false,
+  "independentRightsClearanceCertified": false,
+  "primaryComparison": "pinned-official-ecdict.csv",
+  "upstreamComparison": {
+    "passed": true,
+    "gitBlobVerified": true,
+    "sourceCsvSha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+    "lineage": {
+      "snapshot": "before-first-recorded-meaning-revision",
+      "sha256": "9be9d96824be4d2c9b024b6197b7e8f5d37a028fe15d0195826b4ab2394592e7",
+      "entries": 757041,
+      "snapshotKeysAbsentFromUpstream": 0,
+      "sharedContentDifferencesIgnoringOuterWhitespace": 0,
+      "upstreamAbsentFromSnapshot": 13570,
+      "upstreamAbsentFromBothSnapshotAndCurrent": 13483,
+      "upstreamInSnapshotButAbsentFromCurrent": 12098
+    },
+    "contentRecords": 82060,
+    "formattingRecords": 124595,
+    "absenceRecords": 25581,
+    "check": "All before fields match pinned upstream; all after fields match current database; classification totals reconcile"
+  }
+}

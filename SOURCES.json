@@ -1,0 +1,75 @@
+{
+  "formatVersion": 1,
+  "datasetVersion": "0.1.0",
+  "preparedOn": "2026-10-08",
+  "base": {
+    "name": "ECDICT",
+    "repository": "https://github.com/skywind3000/ECDICT",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2025 Linwei",
+    "historicalCommit": null,
+    "comparisonCommit": "82c9872576b23118d7c42e920c11beb77f510ae2",
+    "comparisonFile": "ecdict.csv",
+    "comparisonFileSha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+    "comparisonFileVerified": true,
+    "note": "historicalCommit refers only to the original download operation; the official comparison file is independently pinned and verified"
+  },
+  "newEditorialContributions": {
+    "attribution": "ECDICT Revised contributors",
+    "license": "CC-BY-SA-4.0"
+  },
+  "creditedReferences": [
+    {
+      "name": "Open English WordNet contributors, English WordNet 2025+",
+      "url": "https://github.com/globalwordnet/english-wordnet",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "name": "Princeton University, WordNet 3.0",
+      "url": "https://wordnet.princeton.edu/license-and-commercial-use",
+      "licenseFile": "licenses/WORDNET-3.0.txt"
+    },
+    {
+      "name": "Wiktionary contributors",
+      "url": "https://en.wiktionary.org/",
+      "license": "CC-BY-SA; see retained notices and page histories"
+    },
+    {
+      "name": "Wikipedia contributors",
+      "url": "https://en.wikipedia.org/",
+      "license": "CC-BY-SA-4.0"
+    },
+    {
+      "name": "MDN contributors, HTTPS",
+      "url": "https://developer.mozilla.org/en-US/docs/Glossary/HTTPS",
+      "license": "CC-BY-SA; see retained notice"
+    },
+    {
+      "name": "Robyn Speer, wordfreq 3.1.1",
+      "url": "https://github.com/rspeer/wordfreq#license",
+      "use": "Historical selection of audit ranges only; no wordfreq code or ranking data bundled",
+      "dataLicense": "CC-BY-SA-4.0",
+      "codeLicense": "Apache-2.0"
+    }
+  ],
+  "indexes": {
+    "supplement": {
+      "file": "attribution/supplement-sources.json.gz",
+      "records": 2988,
+      "stage": "2026-09-13",
+      "rawPageTextIncluded": false
+    },
+    "terminalConsultations": {
+      "file": "attribution/consultation-index.jsonl.gz",
+      "records": 25812,
+      "recordsWithUrls": 20919,
+      "uniqueUrls": 255285,
+      "scope": "Available entry-numbered source files from terminal-review groups; excludes other historical stages and supplemental evidence files",
+      "caveat": "Candidate links can come from shared searches, be irrelevant, or no longer resolve. Not a one-to-one word/sense evidence or license mapping.",
+      "rawPageTextIncluded": false
+    }
+  },
+  "allSensesSourceMapped": false,
+  "independentRightsClearanceCertified": false,
+  "note": "Preserves recorded attribution and consultation links, not third-party web pages, paid dictionary definitions or cached source corpora."
+}

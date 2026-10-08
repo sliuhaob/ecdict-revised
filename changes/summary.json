@@ -1,0 +1,37 @@
+{
+  "sourceCsvSha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
+  "currentDatabaseSha256": "d1472880962d742b832f302cc0a4b50782ac2210f36f595a22ef749d5da11b4e",
+  "comparedFields": [
+    "word",
+    "phonetic",
+    "translation"
+  ],
+  "omittedUpstreamFields": [
+    "definition",
+    "pos",
+    "collins",
+    "oxford",
+    "tag",
+    "bnc",
+    "frq",
+    "exchange",
+    "detail",
+    "audio"
+  ],
+  "matchingRule": "Upstream word.trim().toLowerCase(), joined using SQLite NOCASE; duplicate normalized upstream keys are rejected",
+  "contentComparison": "Both translation and phonetic are compared after ECMAScript String.trim(); original strings are retained in before/after records",
+  "counts": {
+    "sourceEntries": 770611,
+    "currentEntries": 758497,
+    "commonEntries": 745030,
+    "added": 13467,
+    "absentFromCurrent": 25581,
+    "contentRevised": 68593,
+    "translationRevised": 68593,
+    "phoneticRevised": 0,
+    "formattingOnly": 124595,
+    "byteIdenticalCommonEntries": 551842,
+    "netEntries": -12114
+  },
+  "caveat": "Absence includes import scope differences and later removals; not all absences are editorial deletions. Content revision counts are text differences, not accuracy certification."
+}

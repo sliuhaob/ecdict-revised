@@ -1,0 +1,104 @@
+ECDICT local corrections: audit ranges 3000–3500, 3500–6500, 6500–10000, 10000–30000, 30000–70000 and 70000–100000, updated 2026-09-13
+
+The base ECDICT content retains the accompanying ECDICT-LICENSE.txt (MIT).
+This local revision is not an official ECDICT, Oxford or Longman release.
+
+The newly written Chinese corrections and associated correction manifest are
+distributed under Creative Commons Attribution-ShareAlike 4.0 International:
+https://creativecommons.org/licenses/by-sa/4.0/
+Changes: Chinese sense additions, corrections to wording/part-of-speech,
+editorial usage/domain labels, and corrected inflection links. The original
+sources were not imported wholesale and their coverage is not guaranteed.
+
+Attribution for the earlier audit used to prepare these corrections:
+- Open English WordNet contributors, English WordNet 2025+, based on Princeton
+  WordNet; CC BY 4.0. https://github.com/globalwordnet/english-wordnet
+  https://creativecommons.org/licenses/by/4.0/
+- Wiktionary contributors, Eric and we'd; CC BY-SA. Source revisions:
+  https://en.wiktionary.org/w/index.php?title=Eric&oldid=92414193
+  https://en.wiktionary.org/w/index.php?title=we%27d&oldid=88230133
+- MDN contributors, HTTPS; CC BY-SA.
+  https://developer.mozilla.org/en-US/docs/Glossary/HTTPS
+- Robyn Speer, wordfreq 3.1.1, corpus snapshot through about 2021; data CC BY-SA
+  4.0, code Apache 2.0. Used only to select the existing audit's surface-form
+  range, not as a new application dictionary or in-app ranking feature.
+  https://github.com/rspeer/wordfreq#license
+
+Editorial histories and backups are retained separately in the project outputs
+directory, not in dictionary entries or the packaged application. All dictionary
+entries retain the original word/phonetic/translation schema. No audit status
+labels are embedded in translations. The earlier historical audit is a snapshot,
+not a description of the latest entries. This is not an exhaustive or independently
+certified dictionary; specialist and rare senses may still need improvement.
+
+2026-09-13: 3831 additional entries complete the previous range's missing lookup
+entries, including reviewed possessives, proper names and nonstandard forms.
+Additional lexical consultation: Wiktionary contributors, emptive (CC BY-SA),
+https://en.wiktionary.org/w/index.php?title=emptive&oldid=75847513
+Definitions have been independently worded in Chinese; source references and
+the transaction comparison are retained outside the dictionary database.
+
+2026-09-13: the 70000–100000 pass changes 739 entries (including 16 related
+lemmas) and 39 inflection links. This is a targeted correction pass, not an
+exhaustive sense audit. Of 30001 ranked forms, 7602 remain without a lookup.
+Additional lexical consultation: Wiktionary contributors, swaggy (CC BY-SA),
+https://en.wiktionary.org/wiki/swaggy
+Merriam-Webster and Collins dictionary entries and CDC/Cambridge University
+Hospitals informational pages were consulted to check selected meanings.
+They have not endorsed this revision. No complete dictionary was imported.
+
+2026-09-13: the follow-up for ranks 70000–100000 inserts 3925 entries without
+changing existing entries, aliases or the database schema. Missing lookups fall
+from 7602 to 3677. The remaining forms are NOT certified as covered. New entries
+include grammatical forms, nonstandard spellings, foreign-language forms and
+proper names; the count is not a count of distinct standard English lemmas.
+Name and entity facts were individually consulted in Wikipedia articles; these
+facts were described in independently worded Chinese, with article-level links
+listed in ECDICT-SUPPLEMENT-SOURCES.json. Wikipedia text is available under
+CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/); article histories
+identify contributors. No complete external dictionary was imported.
+Grammar consultation: Merriam-Webster, 's,
+https://www.merriam-webster.com/dictionary/%27s
+Selected technical expansion checks: UEFI Forum (https://uefi.org/faq), OASIS
+(https://www.oasis-open.org/standard/saml/), Australian Taxation Office
+(https://www.ato.gov.au/super/self-managed-super-funds/in-detail/smsf-resources/smsf-videos)
+and Canada Revenue Agency
+(https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/tax-free-savings-account.html).
+These sources have not endorsed the application. This remains an editorial
+supplement, not a guarantee that all meanings of every included word are complete.
+
+2026-09-13: second follow-up for ranks 70000–100000 adds 633 entries, reducing
+missing lookups from 3677 to 3044. Existing entries, aliases and schema are
+unchanged. These are query forms, not 633 distinct standard English lemmas.
+Additional entity facts use previously cached Wikipedia article leads; article
+links are appended to ECDICT-SUPPLEMENT-SOURCES.json without removing earlier
+attribution. Chinese descriptions are independently worded. Wikipedia text is
+available under CC BY-SA 4.0; article histories identify contributors.
+Selected sense checks: Collins (glory hole), Merriam-Webster (stampeder),
+Treccani (legenda), and CFPB (Good Faith Estimate). Links are recorded in the
+same source index. No entire external dictionary was imported. This supplement
+does not certify exhaustive senses or complete coverage of the ranking range.
+
+2026-09-13: version 1.7.11 adds six missing query forms within the first 3000
+ranks and supplies Chinese definitions for three existing negative contractions.
+Existing phonetics, aliases and schema are preserved. All 70000 leading forms
+now return Chinese content; 3044 forms at ranks 70000–100000 remain unresolved.
+This is a query-coverage check, not certification of exhaustive senses.
+Selected grammatical reference: Cambridge, Contractions,
+https://dictionary.cambridge.org/grammar/british-grammar/contractions
+French dont reference: https://dictionary.cambridge.org/dictionary/french-english/dont
+Chinese explanations were independently worded; no source endorsement is implied.
+
+2026-09-13: version 1.7.12 adds the final 3044 previously missing query forms.
+The database now contains 770569 entries and 56715 aliases. Existing entries,
+phonetics, aliases and schema are unchanged. All 100000 forms from the same
+ranking array return Chinese content. This is lookup coverage, not a claim
+that the array consists entirely of English lemmas or that all meanings are
+exhaustive. Partial tokens and stems retain contextual usage explanations.
+Selected article leads and individual dictionary/reference entries were
+consulted, with references appended to ECDICT-SUPPLEMENT-SOURCES.json.
+Wiktionary and Wikipedia contributors retain attribution via entry histories
+and CC BY-SA 4.0. Other sources retain their own terms; selected facts were
+used for independent Chinese descriptions, not wholesale source copying.
+No external dictionary project was installed or substituted for ECDICT.
+The new Chinese supplement is distributed under the CC BY-SA 4.0 terms above.

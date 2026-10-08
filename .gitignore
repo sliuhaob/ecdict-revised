@@ -1,0 +1,14 @@
+# The full datasets are distributed as GitHub Release assets, not Git blobs.
+/data/*.sqlite
+/data/*.sqlite-*
+/data/*.csv
+/data/*.jsonl
+/rebuilt.sqlite*
+/exported/
+/upstream-ecdict.csv
+/upstream-comparison/
+/dist/
+node_modules/
+*.tmp
+.DS_Store
+Thumbs.db

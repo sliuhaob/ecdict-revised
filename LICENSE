@@ -1,0 +1,35 @@
+ECDICT Revised — component licensing notice
+
+This distribution combines material with different origins. It is NOT a
+blanket re-licensing of all upstream and third-party material under MIT.
+
+1. Base ECDICT material retains its original MIT license and copyright notice:
+   Copyright (c) 2025 Linwei. See licenses/ECDICT-MIT.txt.
+
+2. The project's newly written Chinese corrections, editorial supplements,
+   correction records and original release documentation are made available
+   under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA
+   4.0), continuing the existing local correction notice. Attribution may name
+   "ECDICT Revised contributors", identify the version, link to the project's
+   published repository/release and indicate further modifications. Retain
+   upstream and third-party attributions in ATTRIBUTION.md and SOURCES.json.
+   See licenses/CC-BY-SA-4.0.txt and
+   https://creativecommons.org/licenses/by-sa/4.0/.
+
+3. The scripts in scripts/ are provided under MIT; see licenses/SCRIPTS-MIT.txt.
+
+4. Open English WordNet, Princeton WordNet and other attributed materials
+   retain their applicable notices. Attribution/source indexes do not grant
+   permission to redistribute the full contents of the linked websites.
+   See ATTRIBUTION.md, SOURCES.json, licenses/CC-BY-4.0.txt and
+   licenses/WORDNET-3.0.txt. Commercial dictionary and reference text is not
+   bundled as a source-text corpus in this release.
+
+The legacy correction notice is preserved in licenses/HISTORICAL-CORRECTIONS.txt
+for continuity of attribution. Its intermediate counts and application versions
+describe September 2026 history, NOT the current dataset.
+
+Licenses cover only rights that the relevant licensors hold. No additional
+rights in third-party names, trademarks or content are implied. The data is
+provided without warranty; technical checks are not semantic certification.
+This is not an official ECDICT, Oxford, Longman or Princeton release.

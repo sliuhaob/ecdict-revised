@@ -1,0 +1,6 @@
+# Preserve exact release bytes, including license files, for SHA256SUMS.
+* -text
+*.sqlite binary
+*.gz binary
+*.zip binary
+*.csv -text
