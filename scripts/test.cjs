@@ -4,7 +4,7 @@ const test = require('node:test'), assert = require('node:assert/strict');
 const fs = require('node:fs'), os = require('node:os'), path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const { DatabaseSync } = require('node:sqlite');
-const { SCHEMA, writeCsv, csvRows, inspect, sha256, safeRelative } = require('./lib.cjs');
+const { SCHEMA, writeCsv, csvRows, inspect, inspectInflections, sha256, safeRelative } = require('./lib.cjs');
 test('CSV round trip preserves commas, quotes, line breaks, literal separators and Unicode', async () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ecdict-release-test-'));
   const input = path.join(dir, 'input.sqlite'), output = path.join(dir, 'output.sqlite');
@@ -51,6 +51,24 @@ test('validation detects blank meanings and orphan aliases', () => {
 test('checksum paths cannot escape the release directory', () => {
   for (const p of ['../secret', '/secret', 'C:/secret', 'data\\secret']) assert.throws(() => safeRelative(process.cwd(), p));
   assert.equal(safeRelative(process.cwd(), 'data/entries.csv'), path.resolve('data/entries.csv'));
+});
+test('verb metadata validates type codes, lemma targets and primary alias consistency', () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ecdict-inflections-test-'));
+  const file = path.join(dir, 'verb-inflections.json'), db = new DatabaseSync(':memory:');
+  try {
+    db.exec(SCHEMA); db.prepare('INSERT INTO entries VALUES (?,?,?)').run('atone', '', 'vi. 赎罪');
+    db.prepare('INSERT INTO aliases VALUES (?,?)').run('atoned', 'atone');
+    assert.equal(inspectInflections(db, file), null);
+    const data = { version: 1, source: 'test', forms: { atoned: [{ lemma: 'atone', types: ['d', 'p'] }] } };
+    const save = () => fs.writeFileSync(file, JSON.stringify(data));
+    save(); const report = inspectInflections(db, file);
+    assert.equal(report.forms, 1); assert.equal(report.pastParticiples, 1); assert.equal(report.pastTenses, 1);
+    data.forms.atoned[0].types = ['x']; save(); assert.throws(() => inspectInflections(db, file), /Invalid lemma/);
+    data.forms.atoned[0].types = ['d']; data.forms.atoned[0].lemma = 'aton'; save();
+    assert.throws(() => inspectInflections(db, file), /Invalid lemma/);
+    data.forms.atoned[0].lemma = 'atone'; save(); db.exec('DELETE FROM aliases');
+    assert.throws(() => inspectInflections(db, file), /alias mismatch/);
+  } finally { db.close(); if (fs.existsSync(file)) fs.unlinkSync(file); fs.rmdirSync(dir); }
 });
 test('upstream comparison separates content edits, formatting, additions and absences', () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ecdict-upstream-test-'));

@@ -91,4 +91,32 @@ function safeRelative(root, relative) {
   if (!target.startsWith(path.resolve(root) + path.sep)) throw new Error('Checksum path escapes package');
   return target;
 }
-module.exports = { TABLES, SCHEMA, openRead, sha256, inspect, writeCsv, csvRows, safeRelative };
+function inspectInflections(db, file) {
+  if (!fs.existsSync(file)) return null;
+  const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+  if (data.version !== 1 || typeof data.source !== 'string' || !data.forms ||
+      typeof data.forms !== 'object' || Array.isArray(data.forms)) throw new Error('Invalid verb inflections format');
+  const entry = db.prepare('SELECT word FROM entries WHERE word=?');
+  const alias = db.prepare('SELECT target FROM aliases WHERE alias=?');
+  let forms = 0, pastTenses = 0, pastParticiples = 0, presentParticiples = 0, multipleLemmas = 0;
+  for (const [form, candidates] of Object.entries(data.forms)) {
+    if (!form.trim() || form !== form.trim().toLowerCase() || !Array.isArray(candidates) || !candidates.length)
+      throw new Error('Invalid verb form: ' + form);
+    const seen = new Set(), types = new Set();
+    for (const item of candidates) {
+      if (!item || typeof item.lemma !== 'string' || !item.lemma.trim() ||
+          item.lemma !== item.lemma.trim().toLowerCase() || item.lemma === form || seen.has(item.lemma) ||
+          !entry.get(item.lemma) || !Array.isArray(item.types) || !item.types.length ||
+          new Set(item.types).size !== item.types.length || item.types.some(t => !['p', 'd', 'i'].includes(t)))
+        throw new Error('Invalid lemma/types for: ' + form);
+      seen.add(item.lemma); item.types.forEach(t => types.add(t));
+    }
+    if (alias.get(form)?.target.toLowerCase() !== candidates[0].lemma)
+      throw new Error('Verb form/alias mismatch: ' + form);
+    forms++; pastTenses += Number(types.has('p')); pastParticiples += Number(types.has('d'));
+    presentParticiples += Number(types.has('i')); multipleLemmas += Number(candidates.length > 1);
+  }
+  if (!forms) throw new Error('Empty verb inflections');
+  return { file: path.basename(file), sha256: sha256(file), forms, pastTenses, pastParticiples, presentParticiples, multipleLemmas, valid: true };
+}
+module.exports = { TABLES, SCHEMA, openRead, sha256, inspect, inspectInflections, writeCsv, csvRows, safeRelative };

@@ -1,8 +1,8 @@
 {
   "dataset": "ECDICT Revised",
-  "version": "0.1.0",
-  "contentThrough": "2026-10-07",
-  "preparedOn": "2026-10-08",
+  "version": "0.1.1",
+  "contentThrough": "2026-10-13",
+  "preparedOn": "2026-10-13",
   "origin": {
     "repository": "https://github.com/skywind3000/ECDICT",
     "comparisonGitCommit": "82c9872576b23118d7c42e920c11beb77f510ae2",
@@ -30,16 +30,16 @@
   },
   "release": {
     "file": "data/ecdict.sqlite",
-    "sha256": "d1472880962d742b832f302cc0a4b50782ac2210f36f595a22ef749d5da11b4e",
-    "bytes": 52895744,
+    "sha256": "eb14ac57a49824cca96764f98a565cd8b6b63c2d4b1f5ebbe73b822467f72a21",
+    "bytes": 52965376,
     "tables": {
       "entries": {
         "rows": 758497,
         "logicalSha256": "1e192e80a8e3e2e92694e6f463d49b0d62b99d96ab742936fafd794684cb30f0"
       },
       "aliases": {
-        "rows": 56434,
-        "logicalSha256": "c4c5ce2d5ee949de29d4244bf7d57aa5ea1ae1553f8c50c4ae8ffd54be8a34f6"
+        "rows": 57647,
+        "logicalSha256": "c15d2266c36a2481be4eec840218f7475c8c7bf065e2030b244c2605971ae1f2"
       }
     }
   },
@@ -92,7 +92,20 @@
     "sha256": "d2ac0557c7777b5fceb6fbbf682352fef8d32c13fa0c543f255dee65268b6b84",
     "entries": 770569,
     "primaryBaseline": false,
-    "aliasDifferenceFile": "changes/history/aliases-vs-2026-09-13.jsonl.gz"
+    "aliasDifferenceFile": "changes/history/aliases-vs-2026-09-13.jsonl.gz",
+    "aliasDifferenceThroughVersion": "0.1.0"
   },
-  "comparisonLimitation": "Text-level net differences in the retained three entry fields, not a certification of correct senses or an audit of omitted upstream fields. Absence includes historical import scope differences."
+  "comparisonLimitation": "Text-level net differences in the retained three entry fields, not a certification of correct senses or an audit of omitted upstream fields. Absence includes historical import scope differences.",
+  "entryMeaningsThrough": "2026-10-07",
+  "verbInflections": {
+    "file": "data/verb-inflections.json",
+    "sha256": "5bc7679318280f0794568cfa1ad9f51dbd8fcdf280a1bb06dc093120fd1520ea",
+    "forms": 17436,
+    "pastTenses": 8788,
+    "pastParticiples": 8812,
+    "presentParticiples": 8523,
+    "multipleLemmas": 59,
+    "valid": true
+  },
+  "currentVersionChange": "changes/v0.1.1.json"
 }

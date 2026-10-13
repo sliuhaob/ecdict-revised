@@ -1,6 +1,6 @@
 {
   "sourceCsvSha256": "1a6947e04785db63613a92e14903cdae7954f7e84860b10e68e5c7cbb3f9c3cf",
-  "currentDatabaseSha256": "d1472880962d742b832f302cc0a4b50782ac2210f36f595a22ef749d5da11b4e",
+  "currentDatabaseSha256": "eb14ac57a49824cca96764f98a565cd8b6b63c2d4b1f5ebbe73b822467f72a21",
   "comparedFields": [
     "word",
     "phonetic",

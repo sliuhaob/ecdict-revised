@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 'use strict';
 const fs = require('node:fs'), path = require('node:path');
-const { openRead, inspect, sha256, safeRelative } = require('./lib.cjs');
+const { openRead, inspect, inspectInflections, sha256, safeRelative } = require('./lib.cjs');
 const args = process.argv.slice(2), sumsAt = args.indexOf('--checksums');
 const sumsFile = sumsAt < 0 ? null : args[sumsAt + 1];
 const files = sumsAt < 0 ? args : args.slice(0, sumsAt);
@@ -10,7 +10,8 @@ if (files.length < 1 || files.length > 2 || (sumsAt >= 0 && !sumsFile)) {
 }
 const reports = files.map(file => {
   const db = openRead(file);
-  try { return { file: path.basename(file), sha256: sha256(file), ...inspect(db) }; }
+  try { return { file: path.basename(file), sha256: sha256(file), ...inspect(db),
+    verbInflections: inspectInflections(db, path.join(path.dirname(file), 'verb-inflections.json')) }; }
   finally { db.close(); }
 });
 let valid = reports.every(r => r.valid), logicalContentEqual = null, checksumsVerified = 0;

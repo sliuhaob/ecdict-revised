@@ -3,6 +3,7 @@
 /data/*.sqlite-*
 /data/*.csv
 /data/*.jsonl
+/data/verb-inflections.json
 /rebuilt.sqlite*
 /exported/
 /upstream-ecdict.csv

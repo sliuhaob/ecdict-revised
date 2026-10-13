@@ -1,0 +1,29 @@
+{
+  "version": "0.1.1",
+  "previousVersion": "0.1.0",
+  "releasedOn": "2026-10-13",
+  "previousDatabaseSha256": "d1472880962d742b832f302cc0a4b50782ac2210f36f595a22ef749d5da11b4e",
+  "currentDatabaseSha256": "eb14ac57a49824cca96764f98a565cd8b6b63c2d4b1f5ebbe73b822467f72a21",
+  "entries": 758497,
+  "entriesChanged": 0,
+  "phoneticsChanged": 0,
+  "translationsChanged": 0,
+  "aliasesBefore": 56434,
+  "aliasesAfter": 57647,
+  "aliasesAdded": 1213,
+  "aliasesCorrected": 87,
+  "aliasesRemoved": 0,
+  "verbInflections": {
+    "file": "verb-inflections.json",
+    "sha256": "5bc7679318280f0794568cfa1ad9f51dbd8fcdf280a1bb06dc093120fd1520ea",
+    "forms": 17436,
+    "pastTenses": 8788,
+    "pastParticiples": 8812,
+    "presentParticiples": 8523,
+    "multipleLemmas": 59,
+    "valid": true
+  },
+  "differenceFile": "changes/aliases-vs-v0.1.0.jsonl.gz",
+  "source": "Pinned ECDICT exchange fields, explicit entry form notes and retained aliases",
+  "schemaChanged": false
+}
